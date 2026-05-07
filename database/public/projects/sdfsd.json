@@ -1,13 +1,11 @@
 {
+  "id": "019df8d9-4993-72c6-84d3-2fa04d48ac1b",
   "slug": "sdfsd",
   "name": "sdfsd",
+  "description": "<p>aqzreqsdfqsdqs</p>",
   "pictures": [],
   "links": [],
-  "id": "019df15e-4926-7218-94ea-796909969a91",
-  "createdAt": "2026-05-04T05:03:01.415+00:00",
-  "updatedAt": "2026-05-04T05:03:01.415+00:00",
-  "tags": [
-    "sdfg",
-    "sfdg"
-  ]
+  "createdAt": "2026-05-05T15:54:42.000+00:00",
+  "updatedAt": "2026-05-07T13:30:32.219+00:00",
+  "tags": []
 }
