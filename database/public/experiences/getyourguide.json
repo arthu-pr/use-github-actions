@@ -1,0 +1,19 @@
+{
+  "id": "019e12a7-4f23-70cf-8b73-40a49580e538",
+  "slug": "getyourguide",
+  "title": "Full-Stack Engineer (Freelance)",
+  "company": "GetYourGuide",
+  "startDate": "2020-10",
+  "endDate": "2021-01",
+  "description": "GetYourGuide is a platform for tour guides, excursions, activities and tourist attractions. I worked on improving customer engagement: implementing a homemade solution to support recommendation email campaigns, collaborating with design and CRM teams to put technology at the service of the customer, optimizing the codebase to ensure maximum supportability on a Vue.js SSR project, and improving unit and end-to-end tests.",
+  "links": [],
+  "createdAt": "2026-05-10T16:10:15.000+00:00",
+  "updatedAt": "2026-05-10T16:10:15.000+00:00",
+  "tags": [
+    "javascript",
+    "php",
+    "testcafe",
+    "vue-js",
+    "vuex"
+  ]
+}
