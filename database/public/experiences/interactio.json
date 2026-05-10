@@ -1,0 +1,20 @@
+{
+  "id": "019e12a7-e8af-74cc-a798-f2d9f14dd16f",
+  "slug": "interactio",
+  "title": "Front-end Developer Internship",
+  "company": "Interact.io",
+  "startDate": "2018-02",
+  "endDate": "2018-08",
+  "description": "Front-end developer internship at Interact.io, working across various projects and technologies.",
+  "links": [],
+  "createdAt": "2026-05-10T16:10:54.000+00:00",
+  "updatedAt": "2026-05-10T16:10:54.000+00:00",
+  "tags": [
+    "angular-6",
+    "angularjs",
+    "javascript",
+    "react",
+    "redux",
+    "vue-js"
+  ]
+}
