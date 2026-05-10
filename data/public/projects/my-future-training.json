@@ -1,0 +1,15 @@
+{
+  "name": "My Future Training — Full-Stack Web & Mobile Developer (Freelance)",
+  "pictures": [],
+  "description": "My Future Training is an all-in-one application designed for sports coaches. As a freelance full-stack web and mobile developer (September 2019 – January 2022), I implemented the entire technical stack: an API, a single-page application, a cross-platform mobile application and a showcase site, including payment solutions (Stripe API and App Store Server API) to manage subscriptions, and established regular deployment rules.",
+  "tags": [
+    "Vue.js",
+    "Nuxt",
+    "Vuex",
+    "JavaScript",
+    "Laravel",
+    "PHP",
+    "Stripe",
+    "Flutter"
+  ]
+}
