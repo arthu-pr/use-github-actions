@@ -1,0 +1,16 @@
+{
+  "name": "L'Ingénu — Co-Founder & Main Full-Stack Engineer",
+  "pictures": [],
+  "description": "L'Ingénu is a collaborative information and expression media aiming to present news in a modular way. As co-founder and main full-stack engineer (February 2022 – January 2023), I implemented and was in charge of the whole technical stack: building the online media platform, choosing an architecture that meets business needs, and normalizing design system rules based on mockups.",
+  "tags": [
+    "Vue.js",
+    "Nuxt",
+    "Vuex",
+    "Pinia",
+    "JavaScript",
+    "TypeScript",
+    "PHP",
+    "Laravel",
+    "Figma"
+  ]
+}
