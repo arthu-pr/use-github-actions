@@ -1,0 +1,17 @@
+{
+  "id": "019e12a7-abb4-7770-a57d-ff0f4c3a3c43",
+  "slug": "monbanquet",
+  "title": "Front-end Developer (Freelance)",
+  "company": "Monbanquet",
+  "startDate": "2019-11",
+  "endDate": "2020-01",
+  "description": "Monbanquet promotes artisanal catering service and tailor-made buffets for professional events. I integrated their new graphic identity on their website: working with design and communication teams to provide an adequate technical solution, communicating with the back-end team to create a solution accordingly to the new architecture, and integrating new views and pages following responsive specifications.",
+  "links": [],
+  "createdAt": "2026-05-10T16:10:38.000+00:00",
+  "updatedAt": "2026-05-10T16:10:38.000+00:00",
+  "tags": [
+    "gatsby",
+    "graphql",
+    "react"
+  ]
+}
