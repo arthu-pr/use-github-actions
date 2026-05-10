@@ -1,0 +1,17 @@
+{
+  "id": "019e12a7-7bc7-70c2-af31-13baf50dbe26",
+  "slug": "personio",
+  "title": "Front-end Engineer (Freelance)",
+  "company": "Personio",
+  "startDate": "2022-06",
+  "endDate": "2022-10",
+  "description": "Personio develops a solution to optimize human resource processes for enterprises. I joined a team working on one of their internal tools, being most of the time the only engineer working on the front-end: implementing a localization wrapper tool and coordination with UX writers and translators, and improving the web app and data management on existing features.",
+  "links": [],
+  "createdAt": "2026-05-10T16:10:26.000+00:00",
+  "updatedAt": "2026-05-10T16:10:26.000+00:00",
+  "tags": [
+    "graphql",
+    "react",
+    "typescript"
+  ]
+}
