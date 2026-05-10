@@ -1,0 +1,12 @@
+{
+  "name": "GetYourGuide — Full-Stack Engineer (Freelance)",
+  "pictures": [],
+  "description": "GetYourGuide is a platform for tour guides, excursions, activities and tourist attractions. As a freelance full-stack engineer (October 2020 – January 2021), I worked on improving customer engagement: implementing a homemade solution to support recommendation email campaigns, collaborating with design and CRM teams, optimizing the codebase for maximum supportability on a Vue.js SSR project, and improving unit and end-to-end tests.",
+  "tags": [
+    "Vue.js",
+    "Vuex",
+    "JavaScript",
+    "PHP",
+    "TestCafe"
+  ]
+}
