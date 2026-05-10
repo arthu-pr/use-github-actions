@@ -1,0 +1,22 @@
+{
+  "id": "019e12a7-c0ee-729c-acc6-bc0184b68086",
+  "slug": "my-future-training",
+  "title": "Full-Stack Web & Mobile Developer (Freelance)",
+  "company": "My Future Training",
+  "startDate": "2019-09",
+  "endDate": "2022-01",
+  "description": "My Future Training is an all-in-one application designed for the sports coach. I implemented the whole technical stack: an API, a single-page application, a cross-platform mobile application and a showcase site, integrating payment solutions (Stripe API and App Store Server API) to manage subscriptions, and monitoring project development by establishing regular deployment rules.",
+  "links": [],
+  "createdAt": "2026-05-10T16:10:44.000+00:00",
+  "updatedAt": "2026-05-10T16:10:44.000+00:00",
+  "tags": [
+    "flutter",
+    "javascript",
+    "laravel",
+    "nuxt",
+    "php",
+    "stripe",
+    "vue-js",
+    "vuex"
+  ]
+}
