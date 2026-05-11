@@ -1,0 +1,19 @@
+{
+  "id": "019e12a7-4f1d-7056-ab7b-90da3de61b6f",
+  "slug": "sdfsd",
+  "name": "sdfsd",
+  "description": "<p>aqzreqsdfqsdqs<strong>qsdqsdqsdqsdsq</strong></p>",
+  "pictures": [],
+  "links": [
+    {
+      "url": "http://fake.com",
+      "label": "label"
+    }
+  ],
+  "createdAt": "2026-05-10T16:10:15.000+00:00",
+  "updatedAt": "2026-05-10T16:10:15.000+00:00",
+  "tags": [
+    "ded",
+    "test"
+  ]
+}
