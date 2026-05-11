@@ -1,14 +1,15 @@
 {
+  "id": "019e157c-824f-70ad-b956-f161b1049393",
+  "slug": "qs",
   "title": "qs",
   "company": "QSD",
   "startDate": "2026-05-21",
   "endDate": "2026-05-29",
+  "description": "",
   "links": [],
-  "id": "019e157c-03d9-732b-9648-dac311da748e",
-  "slug": "qs",
-  "createdAt": "2026-05-11T05:21:49.529+00:00",
-  "updatedAt": "2026-05-11T05:21:49.529+00:00",
+  "createdAt": "2026-05-11T05:22:21.000+00:00",
+  "updatedAt": "2026-05-11T05:22:21.000+00:00",
   "tags": [
-    "Tuu"
+    "tuu"
   ]
 }
