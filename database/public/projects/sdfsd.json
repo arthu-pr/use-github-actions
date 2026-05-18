@@ -1,5 +1,5 @@
 {
-  "id": "019e1898-e297-74ff-8f31-e5616f5d29ef",
+  "id": "019e3d00-ad35-7652-92d6-3c863fd0eb89",
   "slug": "sdfsd",
   "name": "sdfsd",
   "description": "<p>aqzreqsdfqsdqs<strong>qsdqsdqsdqsdsq</strong></p>",
@@ -10,9 +10,11 @@
       "label": "label"
     }
   ],
-  "createdAt": "2026-05-11T19:52:13.000+00:00",
-  "updatedAt": "2026-05-11T19:52:13.000+00:00",
+  "createdAt": "2026-05-18T21:31:55.000+00:00",
+  "updatedAt": "2026-05-18T21:31:55.000+00:00",
   "tags": [
-    "New-tag"
+    "koolshen",
+    "new-tag",
+    "tag2"
   ]
 }
