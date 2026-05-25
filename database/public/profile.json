@@ -1,0 +1,22 @@
+{
+  "firstName": "Art",
+  "lastName": "Plaza",
+  "title": "Dev",
+  "description": "In quis ipsum incididunt ullamco eu pariatur. Sint exercitation aliqua nostrud eu in quis tempor sunt ad pariatur proident. Est adipisicing nulla nisi eu ut occaecat dolor culpa. Aute velit ut reprehenderit cillum enim labore elit.",
+  "address": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "contacts": [
+    {
+      "type": "email",
+      "value": "plazanet.art@gmail.com"
+    }
+  ],
+  "socials": [
+    {
+      "platform": "Github",
+      "url": "https://github.com/arthu-pr"
+    }
+  ]
+}
