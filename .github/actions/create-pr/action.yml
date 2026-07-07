@@ -1,0 +1,129 @@
+name: Create Pull Request
+description: 'Create a pull request with changes in a repository'
+
+inputs:
+  github_token:
+    description: 'GitHub token with permissions to create PRs'
+    required: true
+  branch_name:
+    description: 'Name of the branch to create for the PR'
+    required: true
+  base_branch:
+    description: 'Base branch to create PR against'
+    required: false
+    default: 'main'
+  pr_title:
+    description: 'Title of the pull request'
+    required: true
+  pr_body:
+    description: 'Body/description of the pull request'
+    required: false
+    default: ''
+  commit_message:
+    description: 'Commit message for the changes'
+    required: true
+  files_to_add:
+    description: 'Files to add to the commit (e.g., "." for all, or specific paths)'
+    required: false
+    default: '.'
+  repository:
+    description: 'Target repository in the format owner/repo (defaults to current repo)'
+    required: false
+    default: ''
+  labels:
+    description: 'Comma-separated list of labels to add to the PR'
+    required: false
+    default: ''
+  assignees:
+    description: 'Comma-separated list of assignees for the PR'
+    required: false
+    default: ''
+  reviewers:
+    description: 'Comma-separated list of reviewers for the PR'
+    required: false
+    default: ''
+  draft:
+    description: 'Create PR as draft'
+    required: false
+    default: 'false'
+
+outputs:
+  pr_number:
+    description: 'The number of the created pull request'
+    value: ${{ steps.create-pr.outputs.pull-request-number }}
+  pr_url:
+    description: 'The URL of the created pull request'
+    value: ${{ steps.create-pr.outputs.pull-request-url }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout code
+      if: inputs.repository == ''
+      uses: actions/checkout@v4
+      with:
+        token: ${{ inputs.github_token }}
+        fetch-depth: 0
+
+    - name: Checkout target repository
+      if: inputs.repository != ''
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.repository }}
+        token: ${{ inputs.github_token }}
+        fetch-depth: 0
+
+    - name: Configure Git
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Create and switch to branch
+      shell: bash
+      run: |
+        git checkout -b ${{ inputs.branch_name }} || git checkout ${{ inputs.branch_name }}
+
+    - name: Add and commit changes
+      shell: bash
+      run: |
+        git add ${{ inputs.files_to_add }}
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+          echo "HAS_CHANGES=false" >> $GITHUB_ENV
+        else
+          git commit -m "${{ inputs.commit_message }}"
+          echo "HAS_CHANGES=true" >> $GITHUB_ENV
+        fi
+
+    - name: Push changes
+      if: env.HAS_CHANGES == 'true'
+      shell: bash
+      run: |
+        git push origin ${{ inputs.branch_name }} --force
+
+    - name: Create Pull Request
+      if: env.HAS_CHANGES == 'true'
+      id: create-pr
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ inputs.github_token }}
+        branch: ${{ inputs.branch_name }}
+        base: ${{ inputs.base_branch }}
+        title: ${{ inputs.pr_title }}
+        body: ${{ inputs.pr_body }}
+        labels: ${{ inputs.labels }}
+        assignees: ${{ inputs.assignees }}
+        reviewers: ${{ inputs.reviewers }}
+        draft: ${{ inputs.draft }}
+
+    - name: Output results
+      shell: bash
+      run: |
+        if [ "$HAS_CHANGES" == "true" ]; then
+          echo "Pull request created successfully!"
+          echo "PR Number: ${{ steps.create-pr.outputs.pull-request-number }}"
+          echo "PR URL: ${{ steps.create-pr.outputs.pull-request-url }}"
+        else
+          echo "No changes detected, PR was not created"
+        fi

@@ -1,0 +1,28 @@
+# dispatch workflow
+
+name: Dispatch Workflow
+description: 'Dispatch a workflow in another repository'
+inputs:
+  github_token:
+    description: 'GitHub token with permissions to dispatch the workflow'
+    required: true
+  repository:
+    description: 'Target repository in the format owner/repo'
+    required: true
+  workflow_file_name:
+    description: 'Name of the workflow file to dispatch (e.g., ci.yml)'
+    required: true
+  ref:
+    description: 'Git reference (branch, tag, or commit SHA) to run the workflow on'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Dispatch workflow
+      uses: peter-evans/workflow-dispatch@v1
+      with:
+        token: ${{ inputs.github_token }}
+        repository: ${{ inputs.repository }}
+        workflow: ${{ inputs.workflow_file_name }}
+        ref: ${{ inputs.ref }}

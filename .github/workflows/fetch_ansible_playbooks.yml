@@ -19,7 +19,7 @@ jobs:
       - name: Checkout Private Repository
         uses: actions/checkout@v4
         with:
-          repository: arthur-plazanet/config
+          repository: arthu-pr/config
           ref: feature/add-ansible-basic-config
           token: ${{ secrets.CONFIG_PRIVATE_REPO_TOKEN }}
 
