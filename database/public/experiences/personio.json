@@ -6,9 +6,9 @@
   "endDate": "2022-10",
   "description": "<p>Personio develops a solution to optimize human resource processes for enterprises. I joined a team working on one of their internal tools, being most of the time the only engineer working on the front-end:</p><ul><li>Implementing a localization wrapper tool and coordination with UX writers and translators</li><li>Improving the web app and data management on existing features</li></ul>",
   "links": [],
-  "id": "019fbcf3-8e5f-73b5-a54e-80170875c941",
-  "createdAt": "2026-08-01T10:51:46.144+00:00",
-  "updatedAt": "2026-08-01T10:51:46.144+00:00",
+  "id": "019fbd15-6a54-747a-a018-79b4c2aa6213",
+  "createdAt": "2026-08-01T11:28:45.141+00:00",
+  "updatedAt": "2026-08-01T11:28:45.141+00:00",
   "tags": [
     "graphql",
     "react",
