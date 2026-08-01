@@ -1,5 +1,4 @@
 {
-  "id": "019e12a8-081f-750b-b0bb-65596909880e",
   "slug": "myminifactory",
   "title": "Full-Stack Developer Internship",
   "company": "MyMiniFactory",
@@ -7,8 +6,9 @@
   "endDate": "2016-12",
   "description": "Full-stack developer internship at MyMiniFactory in London, UK.",
   "links": [],
-  "createdAt": "2026-05-10T16:11:02.000+00:00",
-  "updatedAt": "2026-05-10T16:11:02.000+00:00",
+  "id": "019fbcf4-34bf-733d-bcf3-a656390795ef",
+  "createdAt": "2026-08-01T10:52:28.735+00:00",
+  "updatedAt": "2026-08-01T10:52:28.735+00:00",
   "tags": [
     "javascript",
     "jquery",
