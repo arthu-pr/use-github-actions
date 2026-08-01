@@ -6,9 +6,9 @@
   "endDate": "2020-01",
   "description": "<p>Monbanquet promotes artisanal catering service and tailor-made buffets for professional events. I integrated their new graphic identity on their website:</p><ul><li>Working with design and communication teams to provide an adequate technical solution</li><li>Communicating with the back-end team to create a solution accordingly to the new architecture</li><li>Integrating new views and pages following responsive specifications</li></ul>",
   "links": [],
-  "id": "019fbcf3-cbe1-730c-a5ca-84c66ecdd864",
-  "createdAt": "2026-08-01T10:52:01.889+00:00",
-  "updatedAt": "2026-08-01T10:52:01.889+00:00",
+  "id": "019fbd15-a4be-748e-a34b-43a55b770690",
+  "createdAt": "2026-08-01T11:29:00.094+00:00",
+  "updatedAt": "2026-08-01T11:29:00.094+00:00",
   "tags": [
     "gatsby",
     "graphql",
