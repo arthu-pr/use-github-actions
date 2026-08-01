@@ -1,4 +1,5 @@
 {
+  "id": "019fbd44-f015-7049-996d-41c44951fd4f",
   "slug": "lingenu",
   "title": "Co-Founder & Main Full-Stack Engineer",
   "company": "L'Ingénu",
@@ -6,9 +7,8 @@
   "endDate": "2023-01",
   "description": "<p>L'Ingénu is a collaborative information and expression media. It aims to present news in a modular way, making it more presentable for the user. I implemented and was in charge of the whole technical stack:</p><ul><li>Building an online media platform with the implicated constraints</li><li>Choosing an architecture that meets business needs</li><li>Normalizing design system rules based on mockups</li></ul>",
   "links": [],
-  "id": "019fbd3f-0bdd-72da-8316-1de9ba4a8008",
-  "createdAt": "2026-08-01T12:14:13.471+00:00",
-  "updatedAt": "2026-08-01T12:14:13.471+00:00",
+  "createdAt": "2026-08-01T12:20:39.000+00:00",
+  "updatedAt": "2026-08-01T12:20:39.000+00:00",
   "tags": [
     "figma",
     "javascript",
