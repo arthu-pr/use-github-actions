@@ -6,9 +6,9 @@
   "endDate": "2021-01",
   "description": "<p>GetYourGuide is a platform for tour guides, excursions, activities and tourist attractions. I worked on improving customer engagement:</p><ul><li>Implementing a homemade solution to support recommendation email campaigns</li><li>Collaborating with design and CRM teams to put technology at the service of the customer</li><li>Optimizing the codebase to ensure maximum supportability on a Vue.js SSR project</li><li>Improving unit and end-to-end tests</li></ul>",
   "links": [],
-  "id": "019fbcf3-b25b-7358-bb4d-d731d34965c1",
-  "createdAt": "2026-08-01T10:51:55.355+00:00",
-  "updatedAt": "2026-08-01T10:51:55.355+00:00",
+  "id": "019fbd15-8bf0-742a-84ab-6db682f3e182",
+  "createdAt": "2026-08-01T11:28:53.744+00:00",
+  "updatedAt": "2026-08-01T11:28:53.744+00:00",
   "tags": [
     "javascript",
     "php",
