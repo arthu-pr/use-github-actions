@@ -7,8 +7,8 @@
   "endDate": "2022-01",
   "description": "<p>My Future Training is an all-in-one application designed for the sports coach. I implemented the whole technical stack:</p><ul><li>Implementing an API, a single-page application, a cross-platform mobile application and a showcase site</li><li>Integrating payment solutions (Stripe API and App Store Server API) to manage subscriptions</li><li>Monitoring project development by establishing regular deployment rules</li></ul>",
   "links": [],
-  "createdAt": "2026-08-01T12:20:39.000+00:00",
-  "updatedAt": "2026-08-01T12:20:39.000+00:00",
+  "createdAt": "2026-08-01T12:24:52.000+00:00",
+  "updatedAt": "2026-08-01T12:24:52.000+00:00",
   "tags": [
     "flutter",
     "javascript",
