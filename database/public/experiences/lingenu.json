@@ -6,9 +6,9 @@
   "endDate": "2023-01",
   "description": "<p>L'Ingénu is a collaborative information and expression media. It aims to present news in a modular way, making it more presentable for the user. I implemented and was in charge of the whole technical stack:</p><ul><li>Building an online media platform with the implicated constraints</li><li>Choosing an architecture that meets business needs</li><li>Normalizing design system rules based on mockups</li></ul>",
   "links": [],
-  "id": "019fbcf3-73f6-709d-892f-9775ff4ba30c",
-  "createdAt": "2026-08-01T10:51:39.382+00:00",
-  "updatedAt": "2026-08-01T10:51:39.383+00:00",
+  "id": "019fbd15-561a-74bd-9b17-7bc52d983607",
+  "createdAt": "2026-08-01T11:28:39.962+00:00",
+  "updatedAt": "2026-08-01T11:28:39.963+00:00",
   "tags": [
     "figma",
     "javascript",
