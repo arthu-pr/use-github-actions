@@ -1,0 +1,19 @@
+{
+  "name": "dotfiles",
+  "description": "<p>Setup once, then<span style=\"font-family: Lato;\"> git pull</span></p>",
+  "pictures": [],
+  "links": [
+    {
+      "url": "https://github.com/arthu-pr/dotfiles",
+      "label": "GitHub"
+    }
+  ],
+  "id": "019fdc8c-cc2c-73b3-9885-d4e5fe8f522c",
+  "slug": "dotfiles",
+  "createdAt": "2026-08-07T14:07:22.670+00:00",
+  "updatedAt": "2026-08-07T14:07:22.670+00:00",
+  "tags": [
+    "bash",
+    "script"
+  ]
+}
