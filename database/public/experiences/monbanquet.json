@@ -1,0 +1,17 @@
+{
+  "slug": "monbanquet",
+  "title": "Front-end Developer (Freelance)",
+  "company": "Monbanquet",
+  "startDate": "2019-11",
+  "endDate": "2020-01",
+  "description": "<p>Artisanal catering and tailor-made buffets for professional events. I integrated their new graphic identity on their website:</p><ul><li>Working with design and communication teams to provide an adequate technical solution</li><li>Communicating with the back-end team to create a solution accordingly to the new architecture</li><li>Integrating new views and pages following responsive specifications</li></ul>",
+  "links": [],
+  "id": "019fd9bc-b461-77b9-b05b-ac3c24b7844d",
+  "createdAt": "2026-08-07T01:00:50.657+00:00",
+  "updatedAt": "2026-08-07T01:00:50.657+00:00",
+  "tags": [
+    "gatsby",
+    "graphql",
+    "react"
+  ]
+}
