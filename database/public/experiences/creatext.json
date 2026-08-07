@@ -1,0 +1,16 @@
+{
+  "slug": "creatext",
+  "title": "Front-end Engineer (Freelance)",
+  "company": "Creatext",
+  "startDate": "2022-03",
+  "endDate": "2022-04",
+  "description": "<p>Berlin start-up generating personalized prospect messages with in-house AI. Only front-end engineer at the early stage of the web app:</p><ul><li>Integrating new pages and components following the roadmap, with a coherent data-flow through the application</li><li>Prioritizing tasks to deploy to production daily</li></ul>",
+  "links": [],
+  "id": "019fd9bc-8d23-72bd-b702-b8d49e46b26b",
+  "createdAt": "2026-08-07T01:00:40.611+00:00",
+  "updatedAt": "2026-08-07T01:00:40.611+00:00",
+  "tags": [
+    "react",
+    "redux"
+  ]
+}
