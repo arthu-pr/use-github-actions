@@ -1,0 +1,39 @@
+{
+  "slug": "reteach",
+  "title": "Senior Frontend Engineer",
+  "company": "Reteach",
+  "startDate": "2023-02",
+  "endDate": null,
+  "description": "<p>Reteach is an LMS (Learning Management System) platform. I led and implemented several high-impact frontend initiatives:</p><ul><li>Migrating the WYSIWYG editor from CKEditor to Tiptap (ProseMirror) — defining the component and extension architecture, and implementing the most customer-demanded features (floating link menu, font colors, multi-color selector, context-aware toolbar, three-dot menu)</li><li>Leading the full i18n strategy and Lokalise integration from scratch — defining key naming conventions, implementing a shared vue-i18n configuration package in the Nx monorepo, and proposing a novel Vue component interpolation solution</li><li>Introducing Story Points and velocity tracking to improve sprint estimation and delivery forecasting</li><li>Designing and leading the Frontend Engineer interview process end-to-end (coding challenge, feedback loop, candidate follow-ups)</li><li>Building the Engineering Wiki, open-sourcing the nuxt-compose-icons library, and setting up the shared UI library with Storybook in the Nx monorepo</li></ul>",
+  "links": [
+    {
+      "url": "https://nuxt-compose-icons.arthurplazanet.com/",
+      "label": "nuxt-compose-icons"
+    },
+    {
+      "url": "https://storybook-rt.arthurplazanet.com/?path=/story/forms-rtbutton--primary",
+      "label": "Storybook"
+    },
+    {
+      "url": "https://frontend-coding-challenge.arthurplazanet.com/",
+      "label": "Coding Challenge"
+    }
+  ],
+  "id": "019fd9be-8b05-727f-afde-e913de68aaf8",
+  "createdAt": "2026-08-07T01:02:51.142+00:00",
+  "updatedAt": "2026-08-07T01:02:51.142+00:00",
+  "tags": [
+    "figma",
+    "i18n",
+    "lokalise",
+    "nuxt",
+    "nx",
+    "prosemirror",
+    "scrum",
+    "storybook",
+    "tiptap",
+    "typescript",
+    "vite",
+    "vue-js"
+  ]
+}
