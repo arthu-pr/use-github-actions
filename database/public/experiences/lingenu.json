@@ -1,0 +1,23 @@
+{
+  "slug": "lingenu",
+  "title": "Co-Founder & Main Full-Stack Engineer",
+  "company": "L'Ingénu",
+  "startDate": "2022-02",
+  "endDate": "2023-01",
+  "description": "<p>Collaborative news media presenting information in a modular way. I owned the whole technical stack:</p><ul><li>Building an online media platform with the implicated constraints</li><li>Choosing an architecture that meets business needs</li><li>Normalizing design system rules based on mockups</li></ul>",
+  "links": [],
+  "id": "019fd9bc-6823-70b5-922f-dd39e5e44773",
+  "createdAt": "2026-08-07T01:00:31.140+00:00",
+  "updatedAt": "2026-08-07T01:00:31.140+00:00",
+  "tags": [
+    "figma",
+    "javascript",
+    "laravel",
+    "nuxt",
+    "php",
+    "pinia",
+    "typescript",
+    "vue-js",
+    "vuex"
+  ]
+}
