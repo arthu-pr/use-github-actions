@@ -1,0 +1,100 @@
+name: Publish Content
+
+# Write side of the headless-CMS content pipeline used by api.arthurplazanet.com's
+# GitHubActionsContentService. Triggered via Octokit's actions.createWorkflowDispatch
+# (workflow_dispatch is fire-and-forget — no run id comes back to the caller, so the
+# API can't confirm success synchronously; it treats this as the durable/public mirror,
+# not the live read path). Reads for these content types still go straight to the repo
+# contents API — only writes for blog/snippets go through this workflow instead of a
+# direct commit.
+#
+# Inputs are untrusted (ultimately back-office user input), so every step passes them
+# through `env:` and reads them back as shell variables rather than interpolating
+# `${{ inputs.* }}` directly into a run: body — the latter is a documented GitHub
+# Actions script-injection vector (the template substitution happens before the shell
+# parses the script, so unescaped metacharacters in the input become shell syntax).
+
+on:
+  workflow_dispatch:
+    inputs:
+      contentType:
+        description: 'Content directory under database/public/ (blog | snippets)'
+        required: true
+      action:
+        description: 'create | update | delete'
+        required: true
+      slug:
+        description: 'Entry slug — becomes the filename'
+        required: true
+      payload:
+        description: 'JSON string of the entry (omitted for delete)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      CONTENT_TYPE: ${{ inputs.contentType }}
+      ACTION: ${{ inputs.action }}
+      SLUG: ${{ inputs.slug }}
+      PAYLOAD: ${{ inputs.payload }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Validate inputs
+        run: |
+          case "$CONTENT_TYPE" in
+            blog|snippets) ;;
+            *) echo "::error::Unknown contentType '$CONTENT_TYPE'"; exit 1 ;;
+          esac
+
+          case "$ACTION" in
+            create|update|delete) ;;
+            *) echo "::error::Unknown action '$ACTION'"; exit 1 ;;
+          esac
+
+          if [[ ! "$SLUG" =~ ^[a-z0-9-]+$ ]]; then
+            echo "::error::slug must match [a-z0-9-]+, got '$SLUG'"
+            exit 1
+          fi
+
+          if [[ "$ACTION" != "delete" && -z "$PAYLOAD" ]]; then
+            echo "::error::payload is required for action '$ACTION'"
+            exit 1
+          fi
+
+          if [[ "$ACTION" != "delete" ]] && ! jq -e . >/dev/null 2>&1 <<< "$PAYLOAD"; then
+            echo "::error::payload is not valid JSON"
+            exit 1
+          fi
+
+      - name: Apply change
+        run: |
+          dir="database/public/$CONTENT_TYPE"
+          file="$dir/$SLUG.json"
+
+          if [[ "$ACTION" == "delete" ]]; then
+            git rm --ignore-unmatch -f "$file"
+          else
+            mkdir -p "$dir"
+            jq '.' <<< "$PAYLOAD" > "$file"
+            git add "$file"
+          fi
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "$ACTION: $CONTENT_TYPE/$SLUG"
+          git push origin "HEAD:${{ github.ref_name }}"
