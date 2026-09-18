@@ -8,11 +8,10 @@ name: Publish Content
 # contents API — only writes for blog/snippets go through this workflow instead of a
 # direct commit.
 #
-# Inputs are untrusted (ultimately back-office user input), so every step passes them
-# through `env:` and reads them back as shell variables rather than interpolating
-# `${{ inputs.* }}` directly into a run: body — the latter is a documented GitHub
-# Actions script-injection vector (the template substitution happens before the shell
-# parses the script, so unescaped metacharacters in the input become shell syntax).
+# Validation and the actual file write live in scripts/publish-content.mjs: inputs are
+# untrusted (ultimately back-office user input), and passing them as plain env vars into
+# a Node script sidesteps the shell-quoting/injection surface that interpolating
+# `${{ inputs.* }}` directly into a run: body would open up.
 
 on:
   workflow_dispatch:
@@ -46,50 +45,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Validate inputs
-        run: |
-          case "$CONTENT_TYPE" in
-            blog|snippets) ;;
-            *) echo "::error::Unknown contentType '$CONTENT_TYPE'"; exit 1 ;;
-          esac
-
-          case "$ACTION" in
-            create|update|delete) ;;
-            *) echo "::error::Unknown action '$ACTION'"; exit 1 ;;
-          esac
-
-          if [[ ! "$SLUG" =~ ^[a-z0-9-]+$ ]]; then
-            echo "::error::slug must match [a-z0-9-]+, got '$SLUG'"
-            exit 1
-          fi
-
-          if [[ "$ACTION" != "delete" && -z "$PAYLOAD" ]]; then
-            echo "::error::payload is required for action '$ACTION'"
-            exit 1
-          fi
-
-          if [[ "$ACTION" != "delete" ]] && ! jq -e . >/dev/null 2>&1 <<< "$PAYLOAD"; then
-            echo "::error::payload is not valid JSON"
-            exit 1
-          fi
-
       - name: Apply change
-        run: |
-          dir="database/public/$CONTENT_TYPE"
-          file="$dir/$SLUG.json"
-
-          if [[ "$ACTION" == "delete" ]]; then
-            git rm --ignore-unmatch -f "$file"
-          else
-            mkdir -p "$dir"
-            jq '.' <<< "$PAYLOAD" > "$file"
-            git add "$file"
-          fi
+        run: node scripts/publish-content.mjs
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add "database/public/$CONTENT_TYPE"
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
