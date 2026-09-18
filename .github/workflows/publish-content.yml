@@ -1,0 +1,60 @@
+name: Publish Content
+
+# Write side of the headless-CMS content pipeline used by api.arthurplazanet.com's
+# GitHubActionsContentService. Triggered via Octokit's actions.createWorkflowDispatch
+# (workflow_dispatch is fire-and-forget — no run id comes back to the caller, so the
+# API can't confirm success synchronously; it treats this as the durable/public mirror,
+# not the live read path). Reads for these content types still go straight to the repo
+# contents API — only writes for blog/snippets go through this workflow instead of a
+# direct commit.
+#
+# scripts/publish-content.mjs does the actual write via the GitHub REST Contents API —
+# a single-file PUT/DELETE against a branch, not a git commit, so the checkout below is
+# sparse (just the script itself, not the full database/public tree it's writing into).
+# Inputs are untrusted (ultimately back-office user input), so they're passed as plain
+# env vars rather than interpolated into a run: body, which would open a shell-quoting/
+# injection surface the script sidesteps entirely.
+
+on:
+  workflow_dispatch:
+    inputs:
+      contentType:
+        description: 'Content directory under database/public/ (blog | snippets)'
+        required: true
+      action:
+        description: 'create | update | delete'
+        required: true
+      slug:
+        description: 'Entry slug — becomes the filename'
+        required: true
+      payload:
+        description: 'JSON string of the entry (omitted for delete)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          sparse-checkout: scripts/publish-content.mjs
+          sparse-checkout-cone-mode: false
+
+      - name: Publish
+        run: node scripts/publish-content.mjs
+        env:
+          CONTENT_TYPE: ${{ inputs.contentType }}
+          ACTION: ${{ inputs.action }}
+          SLUG: ${{ inputs.slug }}
+          PAYLOAD: ${{ inputs.payload }}
+          GITHUB_TOKEN: ${{ github.token }}
